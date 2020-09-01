@@ -165,7 +165,7 @@ true
 @def_static_system struct Gain{G, IP, OP, RO} <: AbstractStaticSystem
     gain::G = 1.
     input::IP = Inport() 
-    output::OP = Outport(length(gain * zeros(length(input)))) 
+    output::OP = Outport(length(zeros(length(input)))) 
     readout::RO = (u, t, gain=gain) -> gain * u
 end
 
